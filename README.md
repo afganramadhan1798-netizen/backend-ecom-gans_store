@@ -1,58 +1,336 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img
+    src="assets/logo.png"
+    alt="Gan's Store Logo"
+    width="180"
+  />
 </p>
 
-## About Laravel
+<h1 align="center">Gan's Store</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  A Modern Full-Stack E-Commerce Website
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Gan's Store — E-Commerce Website
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+A web-based e-commerce application built with Vue.js, Laravel, and MySQL. Gan's Store provides an online shopping experience with product management, shopping cart, wishlist, checkout, order management, and an admin dashboard.
 
-## Learning Laravel
+## About The Project
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Gan's Store is a full-stack e-commerce project designed to simplify online shopping and store management.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The application separates the frontend and backend into two repositories. The frontend handles the user interface and interactions, while the backend provides REST API services, authentication, business logic, and database management.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Features
 
-## Agentic Development
+### Customer Features
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- User registration and login.
+- Browse available products.
+- View product details.
+- Browse product categories.
+- Add products to shopping cart.
+- Update product quantities in cart.
+- Remove items from cart.
+- Manage wishlist.
+- Manage delivery address.
+- Checkout and create orders.
+- View order history and order details.
+- Cancel orders according to system rules.
 
-```bash
-composer require laravel/boost --dev
+### Admin Features
 
-php artisan boost:install
+- Admin dashboard.
+- Manage products (Create, Read, Update, Delete).
+- Upload product images.
+- Manage product categories.
+- View registered users.
+- Update user roles.
+- Activate or deactivate user accounts.
+- View customer orders.
+- Update order statuses.
+
+## Tech Stack
+
+### Frontend
+
+- Vue.js
+- Vite
+- JavaScript
+- Axios
+- CSS
+
+### Backend
+
+- PHP 8.3+
+- Laravel 13
+- Laravel Sanctum
+- REST API
+
+### Database
+
+- MySQL
+
+## Project Architecture
+
+Gan's Store uses a separated frontend and backend architecture.
+
+```text
+Gan's Store
+│
+├── Frontend
+│   ├── Vue.js
+│   ├── Vite
+│   ├── Axios
+│   └── CSS
+│
+└── Backend
+    ├── Laravel 13
+    ├── Laravel Sanctum
+    ├── REST API
+    └── MySQL
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Repositories
 
-## Contributing
+| Component | Repository |
+|---|---|
+| Frontend | Add your frontend repository URL here |
+| Backend | [backend-ecom-gans_store](https://github.com/afganramadhan1798-netizen/backend-ecom-gans_store) |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Database Structure
 
-## Code of Conduct
+The application uses MySQL with the following main tables:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Table | Description |
+|---|---|
+| users | User account information |
+| user_addresses | Customer addresses |
+| categories | Product categories |
+| products | Product information |
+| carts | Shopping carts |
+| cart_items | Cart items |
+| wishlists | Customer wishlist |
+| orders | Customer orders |
+| order_items | Order details |
+| personal_access_tokens | Laravel Sanctum tokens |
 
-## Security Vulnerabilities
+Laravel supporting tables are also used for migrations, sessions, cache, and job processing.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Getting Started
+
+Follow the instructions below to run the application locally.
+
+### Prerequisites
+
+Make sure you have installed:
+
+- PHP 8.3 or higher.
+- Composer.
+- Node.js and npm.
+- MySQL.
+- Git.
+- Laragon or another local development environment.
+
+### 1. Clone the Backend Repository
+
+```bash
+git clone https://github.com/afganramadhan1798-netizen/backend-ecom-gans_store.git
+
+cd backend-ecom-gans_store
+```
+
+### 2. Install Backend Dependencies
+
+```bash
+composer install
+```
+
+### 3. Configure Environment Variables
+
+Copy `.env.example` into `.env`.
+
+```bash
+cp .env.example .env
+```
+
+Configure your local database connection:
+
+```env
+APP_NAME="Gan's Store"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://127.0.0.1:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=gans_store_backend
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Update the database values according to your local MySQL configuration.
+
+### 4. Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+### 5. Run Database Migrations
+
+```bash
+php artisan migrate
+```
+
+If you have a database backup containing existing project data, import it into MySQL before using the application with that data.
+
+### 6. Create Storage Link
+
+```bash
+php artisan storage:link
+```
+
+This command allows publicly accessible product images stored on Laravel's public disk to be served through the application.
+
+### 7. Start Laravel Server
+
+```bash
+php artisan serve
+```
+
+The backend API will be available at:
+
+```text
+http://127.0.0.1:8000/api
+```
+
+## Frontend Setup
+
+Clone your frontend repository separately.
+
+```bash
+git clone YOUR_FRONTEND_REPOSITORY_URL
+cd YOUR_FRONTEND_PROJECT_FOLDER
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env` file in the frontend project root:
+
+```env
+VITE_API_BASE_URL=http://127.0.0.1:8000/api
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+The frontend will be available at the local URL provided by Vite.
+
+## API Authentication
+
+Gan's Store uses Laravel Sanctum for API authentication.
+
+After successful login, the frontend receives an authentication token and sends it with protected API requests through the Authorization header.
+
+```http
+Authorization: Bearer YOUR_ACCESS_TOKEN
+Accept: application/json
+```
+
+Protected endpoints require a valid authentication token.
+
+## Main API Endpoints
+
+### Public Endpoints
+
+| Method | Endpoint |
+|---|---|
+| POST | `/api/register` |
+| POST | `/api/login` |
+| GET | `/api/products` |
+| GET | `/api/products/{product}` |
+| GET | `/api/categories` |
+
+### Customer Endpoints
+
+| Method | Endpoint |
+|---|---|
+| GET | `/api/user` |
+| POST | `/api/logout` |
+| GET | `/api/orders` |
+| POST | `/api/orders` |
+| GET | `/api/cart` |
+| POST | `/api/cart/items` |
+| GET | `/api/wishlist` |
+| POST | `/api/wishlist` |
+| GET | `/api/address` |
+| PUT | `/api/address` |
+
+### Admin Endpoints
+
+| Method | Endpoint |
+|---|---|
+| GET | `/api/admin/users` |
+| PATCH | `/api/admin/users/{id}/role` |
+| PATCH | `/api/admin/users/{id}/status` |
+| GET | `/api/admin/products` |
+| POST | `/api/admin/products` |
+| PUT | `/api/admin/products/{product}` |
+| DELETE | `/api/admin/products/{product}` |
+| GET | `/api/admin/categories` |
+| POST | `/api/admin/categories` |
+| PUT | `/api/admin/categories/{category}` |
+| DELETE | `/api/admin/categories/{category}` |
+| GET | `/api/admin/orders` |
+| PATCH | `/api/admin/orders/{order}/status` |
+
+## Security Notes
+
+- Never commit `.env` files containing credentials.
+- Keep application keys and database passwords private.
+- Protected API routes use Laravel Sanctum authentication.
+- Admin endpoints require administrator authorization.
+- User account status is checked by the backend middleware.
+
+## Development Notes
+
+- Frontend and backend are maintained in separate repositories.
+- The backend communicates with the frontend through REST API.
+- Axios is used for HTTP communication.
+- Product images are managed through Laravel's public storage disk.
+- MySQL is used as the primary database.
+
+## Future Improvements
+
+Potential future improvements include:
+
+- Payment gateway integration.
+- Shipping service integration.
+- Product reviews and ratings.
+- Order notifications.
+- Sales analytics dashboard.
+- Improved mobile experience.
+
+## Author
+
+**Afgan Ramadhan**
+
+Full-Stack Web Development Project
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is developed for learning and portfolio purposes.
+
+---
+
+**Gan's Store — Online Shopping Made Simple.**
