@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="assets/logo.png"
+    src="public/images/Logo.png"
     alt="Gan's Store Logo"
     width="180"
   />
