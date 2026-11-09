@@ -8,6 +8,10 @@ use App\Http\Controllers\Api\ProductController;
 use App\Http\Middleware\EnsureUserIsActive;
 use App\Http\Middleware\EnsureUserIsAdmin;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\Api\AddressController;
 
 Route::post('/register', [AuthenticationController::class, 'register']);
 Route::post('/login', [AuthenticationController::class, 'login']);
@@ -28,6 +32,26 @@ Route::middleware([
         return $request->user();
     });
 
+    Route::get('/orders', [OrderController::class, 'index']);
+    Route::post('/orders', [OrderController::class, 'store']);
+    Route::get('/orders/{order}', [OrderController::class, 'show']);
+    Route::patch('/orders/{order}/cancel', [OrderController::class, 'cancel']);
+
+    // Cart
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/cart/items', [CartController::class, 'store']);
+    Route::patch('/cart/items/{cartItem}', [CartController::class, 'update']);
+    Route::delete('/cart/items/{cartItem}', [CartController::class, 'destroy']);
+    Route::delete('/cart', [CartController::class, 'clear']);
+
+    // Wishlist
+    Route::get('/wishlist', [WishlistController::class, 'index']);
+    Route::post('/wishlist', [WishlistController::class, 'store']);
+    Route::delete('/wishlist/{wishlist}', [WishlistController::class, 'destroy']);
+
+    Route::get('/address', [AddressController::class, 'index']);
+    Route::put('/address', [AddressController::class, 'update']);
+    
     // Logout
     Route::post('/logout', [AuthenticationController::class, 'logout']);
 
@@ -141,5 +165,8 @@ Route::middleware([
         Route::post('/admin/categories', [CategoryController::class, 'store']);
         Route::put('/admin/categories/{category}', [CategoryController::class, 'update']);
         Route::delete('/admin/categories/{category}', [CategoryController::class, 'destroy']);
+
+        Route::get('/admin/orders', [OrderController::class, 'adminIndex']);
+        Route::patch('/admin/orders/{order}/status', [OrderController::class,'updateStatus',]);
 });
 });
