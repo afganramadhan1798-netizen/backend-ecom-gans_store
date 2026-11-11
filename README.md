@@ -96,7 +96,7 @@ Gan's Store
 
 | Component | Repository |
 |---|---|
-| Frontend | Add your frontend repository URL here |
+| Frontend | [e-commerce-gans_store](https://github.com/afganramadhan1798-netizen/e-commerce-gans_store) |
 | Backend | [backend-ecom-gans_store](https://github.com/afganramadhan1798-netizen/backend-ecom-gans_store) |
 
 ## Database Structure
